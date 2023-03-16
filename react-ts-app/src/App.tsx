@@ -1,14 +1,22 @@
-function App() {
+import { HashRouter, BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import NotFoundPage from './pages/NotFoundPage';
+
+export function App() {
     return (
-        <form>
-            <input
-                id="dinosaur_name"
-                name="dinosaur_name"
-                className="dinosaur-input"
-                aria-describedby="dinosaur_name_info"
-            />
-        </form>
+        <div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+        </div>
     );
 }
 
-export default App;
+export function WrappedApp() {
+    return (
+        <HashRouter>
+            <App />
+        </HashRouter>
+    );
+}
