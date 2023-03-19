@@ -1,0 +1,35 @@
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: bisque;
+}
+
+.header_navigation {
+    width: 500px;
+}
+
+.navigation-list {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.navigation-link {
+    font-size: 20px;
+    color: green;
+    text-decoration: none;
+    transition: ease-in-out .2s;
+}
+
+.active {
+    color: red;
+}
+
+.navigation-link:hover {
+    color: blue;
+}
+
+.page-name-red {
+    color: red;
+}
