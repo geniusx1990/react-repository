@@ -14,7 +14,9 @@ header {
     justify-content:space-around;
     align-items: center;
 }
-
+li {
+    list-style-type: none;
+}
 .navigation-link {
     font-size: 20px;
     color: green;
