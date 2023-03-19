@@ -1,7 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { HashRouter, BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header, { getLinkData } from './layout/header';
+import { Routes, Route } from 'react-router-dom';
 import AboutUs from './pages/AboutUs';
 import Home from './pages/Home';
 import NotFoundPage from './pages/NotFoundPage';

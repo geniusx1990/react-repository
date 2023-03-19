@@ -6,6 +6,8 @@ export interface ICard {
     brand: string;
     category: string;
     thumbnail: string;
+    rating: number;
+    stock: number;
 }
 
 export interface IProduct {
@@ -20,4 +22,8 @@ export interface IProduct {
     category: string;
     thumbnail: string;
     images: string[];
+}
+
+export interface ISearchState {
+    searchValue: string;
 }
