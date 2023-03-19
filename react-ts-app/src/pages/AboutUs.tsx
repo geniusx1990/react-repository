@@ -7,7 +7,7 @@ class AboutUs extends React.Component {
         return (
             <>
                 <Header pageName="About Us" />
-                <h1>This is main part of webpage</h1>
+                <h1>This is page ABOUT US</h1>
             </>
         );
     }
