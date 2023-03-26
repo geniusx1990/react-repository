@@ -13,6 +13,7 @@ class Header extends React.Component<HeadeerProps> {
         <nav className="header_navigation">
           <ul className="navigation-list">
             <NavLinkComponent to="/" content="Home" />
+            <NavLinkComponent to="/forms" content="Forms" />
             <NavLinkComponent to="/about-us" content="About Us" />
           </ul>
         </nav>
