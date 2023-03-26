@@ -2,10 +2,11 @@ import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
 import AboutUs from './AboutUs';
+import { BrowserRouter } from 'react-router-dom';
 
-describe('AboutUs', () => {
+describe('AboutUs file', () => {
   it('render title About us page', () => {
-    render(<AboutUs />);
+    render(<AboutUs />, { wrapper: BrowserRouter });
     expect(
       screen.getByRole('heading', {
         level: 1,

@@ -1,17 +1,6 @@
 import React from 'react';
 import NavLinkComponent from './NavLinkComponent';
 
-export function getLinkData() {
-  let headerName: string;
-  const pathname = window.location.hash.slice(2);
-  if (pathname === 'about-us') {
-    headerName = 'About-us';
-  } else {
-    headerName = 'Home';
-  }
-  return headerName;
-}
-
 type HeadeerProps = {
   pageName: string;
 };
