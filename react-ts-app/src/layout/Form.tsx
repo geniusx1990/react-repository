@@ -52,7 +52,7 @@ class NameForm extends React.Component<IProps, IState> {
         </label>
         <label>
           Please upload image:
-          <input ref={this.salePriceRef} type="file" accept="image/png, image/jpeg" />
+          <input ref={this.imageRef} type="file" accept="image/png, image/jpeg" />
         </label>
         <label>
           Please select price:
@@ -63,7 +63,7 @@ class NameForm extends React.Component<IProps, IState> {
         </label>
         <label>
           Please confirm our agreement:
-          <input ref={this.salePriceRef} type="checkbox" id="confirm" />
+          <input ref={this.confirmRef} type="checkbox" id="confirm" />
           <label htmlFor="confirm">I agree to proceed with this form</label>
         </label>
         <input type="submit" value="Submit" />
