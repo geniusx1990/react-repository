@@ -10,12 +10,9 @@ class Card extends React.Component<ICard> {
         <div className="card-description">
           <span className="category">{this.props.category}</span>
           <span className="brand-name">{this.props.brand}</span>
-          <h4 className="price">{`$${this.props.price}`}</h4>
-          <span className="discount">{`Sale -${this.props.discount}%`}</span>
-          <span className="rating">{this.props.rating}</span>
+          <span className="discount">{`date -${this.props.date}`}</span>
         </div>
         <div className="card-price-container">
-          <p className="card-in-stock">In stock: {this.props.stock}</p>
           <span className="add-to-cart" />
         </div>
       </div>

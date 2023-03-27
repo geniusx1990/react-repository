@@ -10,14 +10,11 @@ class CardList extends React.Component {
         {productList.map((item) => (
           <Card
             title={item.title}
-            description={item.description}
-            price={item.price}
-            discount={item.discountPercentage}
+            discount={item.discount}
             brand={item.brand}
             category={item.category}
             thumbnail={item.thumbnail}
-            rating={item.rating}
-            stock={item.stock}
+            date={item.date}
             key={item.id}
           />
         ))}

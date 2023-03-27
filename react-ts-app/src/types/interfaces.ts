@@ -1,27 +1,14 @@
 export interface ICard {
   title: string;
-  description: string;
-  price: number;
-  discount: number;
+  date: string;
+  discount: boolean;
   brand: string;
-  category: string;
+  category: string; //laptop or mobile phone
   thumbnail: string;
-  rating: number;
-  stock: number;
 }
 
-export interface IProduct {
+export interface IProduct extends ICard {
   id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
 }
 
 export interface ISearchState {
@@ -33,4 +20,18 @@ export interface IProps {}
 export interface IState {
   name: string;
   date: Date;
+}
+
+export interface ICardForm {
+  title: string;
+  date: string;
+  price: boolean;
+  discount: boolean;
+  brand: string;
+  category: string; //laptop or mobile phone
+  thumbnail: string;
+}
+
+export interface IProductForm extends ICardForm {
+  id: number;
 }
