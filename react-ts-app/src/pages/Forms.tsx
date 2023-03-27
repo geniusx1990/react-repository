@@ -1,4 +1,5 @@
 import React from 'react';
+import NameForm from '../layout/Form';
 import Header from '../layout/header';
 
 class Forms extends React.Component {
@@ -7,6 +8,7 @@ class Forms extends React.Component {
       <>
         <Header pageName="Form" />
         <h1>This is FORM PAGE</h1>
+        <NameForm />
       </>
     );
   }

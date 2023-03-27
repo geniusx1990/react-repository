@@ -27,3 +27,10 @@ export interface IProduct {
 export interface ISearchState {
   searchValue: string;
 }
+
+export interface IProps {}
+
+export interface IState {
+  name: string;
+  date: Date;
+}
