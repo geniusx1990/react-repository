@@ -6,18 +6,18 @@ const options = [
   },
   {
     id: 1,
-    label: 'Mango',
-    value: 'mango',
+    label: 'Samsung',
+    value: 'samsung',
   },
   {
     id: 2,
-    label: 'Banana',
-    value: 'banana',
+    label: 'Xiaomi',
+    value: 'xiaomi',
   },
   {
     id: 3,
-    label: 'Pineapple',
-    value: 'pineapple',
+    label: 'Philips',
+    value: 'philips',
   },
 ];
 
