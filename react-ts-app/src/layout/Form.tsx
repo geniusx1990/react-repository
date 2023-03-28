@@ -46,8 +46,6 @@ class NameForm extends React.Component<IProps, IState> {
 
     const brandValidation = this.brandRef.current?.value !== 'test';
     this.setState({ errorBrand: brandValidation ? false : true });
-    console.log(brandValidation);
-    console.log(this.brandRef.current?.value, 'brandValidation');
 
     const dateValidation = this.dateRef.current?.value && this.dateRef.current?.value <= todayDate;
     this.setState({ errorDate: dateValidation ? false : true });
@@ -61,7 +59,6 @@ class NameForm extends React.Component<IProps, IState> {
 
     const typeValidation = this.typedRef.current?.value !== 'type-name';
     this.setState({ errorType: typeValidation ? false : true });
-    console.log(typeValidation);
 
     const agreeValidation = this.confirmRef.current?.checked;
     this.setState({ errorConfirm: agreeValidation ? false : true });
@@ -153,7 +150,7 @@ class NameForm extends React.Component<IProps, IState> {
                 )}
               </li>
               <li className="warning-item">
-                {this.state.errorThumbnail && (
+                {this.state.errorDiscount && (
                   <p className="warning-message">Please select a discount price or full price</p>
                 )}
               </li>
@@ -163,7 +160,7 @@ class NameForm extends React.Component<IProps, IState> {
                 )}
               </li>
               <li className="warning-item">
-                {this.state.errorThumbnail && (
+                {this.state.errorConfirm && (
                   <p className="warning-message">Please confirm our agreement</p>
                 )}
               </li>
