@@ -182,14 +182,46 @@ li {
 .form {
     display: flex;
     flex-direction: column;
-    align-items: end;
-    width: 500px;
+    align-items: start;
 }
 label {
     margin-top: 11px;
     margin-right: 22px;
+    
 }
 
 .name-input, .date-input, .brand-select {
     margin-left: 10px;
 }
+
+.form-wrapper {
+    display: flex;
+}
+
+.warning-message {
+    color: red;
+}
+
+.label-item {
+margin-bottom: 8px;
+height: 100%;
+padding: 10px 20px;
+border-radius: 25px;
+outline: none;
+border: 1px solid #ffdd22;
+
+}
+
+.confirm-button {
+    height: 100%;
+    padding: 10px 20px;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid #ffdd22;
+    background-color: #ffdd22;
+
+}
+
+
+
+

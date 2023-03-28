@@ -15,23 +15,22 @@ export interface ISearchState {
   searchValue: string;
 }
 
-export interface IProps {}
+export interface IProps {
+  addProduct: (product: IProduct) => void;
+}
 
 export interface IState {
-  name: string;
-  date: Date;
-}
-
-export interface ICardForm {
-  title: string;
-  date: string;
-  price: boolean;
-  discount: boolean;
-  brand: string;
-  category: string; //laptop or mobile phone
-  thumbnail: string;
-}
-
-export interface IProductForm extends ICardForm {
   id: number;
+  message: boolean;
+  errorTitle: boolean;
+  errorBrand: boolean;
+  errorDate: boolean;
+  errorThumbnail: boolean;
+  errorDiscount: boolean;
+  errorType: boolean;
+  errorConfirm: boolean;
+}
+
+export interface IProductList {
+  productList: IProduct[];
 }
