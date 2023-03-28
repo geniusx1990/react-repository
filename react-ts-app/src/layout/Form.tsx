@@ -62,6 +62,32 @@ class NameForm extends React.Component<IProps, IState> {
 
     const agreeValidation = this.confirmRef.current?.checked;
     this.setState({ errorConfirm: agreeValidation ? false : true });
+
+    if (
+      nameRefValid &&
+      brandValidation &&
+      dateValidation &&
+      discountValidation &&
+      thumbnailValidation &&
+      typeValidation &&
+      agreeValidation == true
+    ) {
+      this.props.addProduct({
+        id: this.state.id,
+        title: this.nameRef.current?.value ?? '',
+        date: this.dateRef.current?.value ?? '',
+        discount: this.salePriceRef.current?.checked ?? false,
+        brand: this.brandRef.current?.value ?? '',
+        category: this.typedRef.current?.value ?? '',
+        thumbnail: this.imageRef?.current?.files
+          ? URL.createObjectURL(this.imageRef.current.files[0])
+          : '',
+      });
+
+      this.setState({ message: true });
+      this.formRef.current?.reset();
+      this.setState((prev) => ({ id: prev.id + 1 }));
+    }
   }
 
   render() {
@@ -163,6 +189,9 @@ class NameForm extends React.Component<IProps, IState> {
                 {this.state.errorConfirm && (
                   <p className="warning-message">Please confirm our agreement</p>
                 )}
+              </li>
+              <li className="warning-item">
+                {this.state.message && <p className="warning-message">You card added</p>}
               </li>
             </ul>
           </div>
