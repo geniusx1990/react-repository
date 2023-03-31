@@ -44,4 +44,16 @@ describe('App', () => {
       })
     ).toHaveTextContent('We cannot found this page');
   });
+  it('renders forms-page', () => {
+    render(
+      <MemoryRouter initialEntries={['/', '/forms']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(
+      screen.getByRole('heading', {
+        level: 4,
+      })
+    ).toHaveTextContent('You are now on Form page');
+  });
 });

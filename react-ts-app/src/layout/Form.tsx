@@ -171,7 +171,7 @@ class NameForm extends React.Component<IProps, IState> {
                 )}
               </li>
               <li className="warning-item">
-                {this.state.errorDiscount && (
+                {this.state.errorThumbnail && (
                   <p className="warning-message">Please upload thumbnail</p>
                 )}
               </li>
