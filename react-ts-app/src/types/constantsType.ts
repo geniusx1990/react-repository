@@ -2,7 +2,7 @@ const optionsType = [
   {
     id: 0,
     label: 'please select type',
-    value: 'type-name',
+    value: '',
   },
   {
     id: 1,

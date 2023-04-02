@@ -2,7 +2,7 @@ const options = [
   {
     id: 0,
     label: 'please select brand name',
-    value: 'test',
+    value: '',
   },
   {
     id: 1,

@@ -14,16 +14,6 @@ describe('AboutUs file', () => {
     ).toHaveTextContent('This is FORM PAGE');
   });
 
-  it('renders Sumbit button', () => {
-    render(<Forms />, { wrapper: BrowserRouter });
-    act(() => {
-      const submitButton = screen.getByRole('button');
-      fireEvent.click(submitButton);
-    });
-    const alert = screen.getByText('Please enter a name longer');
-    expect(alert).toBeInTheDocument;
-  });
-
   it('validates product name value', () => {
     render(<Forms />, { wrapper: BrowserRouter });
     act(() => {

@@ -16,7 +16,7 @@ export interface ISearchState {
 }
 
 export interface IProps {
-  addProduct: (product: IProduct) => void;
+  setProductList: React.Dispatch<React.SetStateAction<IProduct[]>>;
 }
 
 export interface IState {
