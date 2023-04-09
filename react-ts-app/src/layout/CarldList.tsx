@@ -1,26 +1,17 @@
-import React from 'react';
-import Card from './Card';
+import { ICardItem, ICardList } from '../types/interfaces';
+import CardItem from './CardItem';
 
-import productList from './productList';
-
-class CardList extends React.Component {
-  render() {
-    return (
-      <div className="cards">
-        {productList.map((item) => (
-          <Card
-            title={item.title}
-            discount={item.discount}
-            brand={item.brand}
-            category={item.category}
-            thumbnail={item.thumbnail}
-            date={item.date}
-            key={item.id}
-          />
-        ))}
-      </div>
-    );
-  }
+function CardList({ itemList }: ICardList) {
+  console.log(itemList);
+  return (
+    <div className="cards">
+      {!itemList.length ? (
+        <p>Nothing found for your request. Please try again...</p>
+      ) : (
+        itemList.map((item: ICardItem) => <CardItem card={item} key={item.id} />)
+      )}
+    </div>
+  );
 }
 
 export default CardList;
