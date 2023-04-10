@@ -39,6 +39,7 @@ export enum API {
   URL = 'https://api.unsplash.com/',
   RANDOM = 'photos/random?count=10',
   ACCESS_KEY = '&client_id=Omdg7CBS3aZdED0fmGY840kQ-zoIAjZzk_kQDXOLdMU',
+  Search = 'search/photos?query=',
 }
 
 interface IUrls {
@@ -82,4 +83,8 @@ export interface ICardList {
 
 export interface ICardItemProps {
   card: ICardItem;
+}
+
+export interface ISearchBar {
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { ISearchBar } from '../types/interfaces';
 
-function SearchBar() {
+function SearchBar({ setQuery }: ISearchBar) {
   const searchStorage = localStorage.getItem('searchInput');
   const [searchValue, setSearchValue] = useState(searchStorage ?? '');
   const search = useRef('');
@@ -21,6 +22,9 @@ function SearchBar() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log(searchValue);
+    setQuery(searchValue);
+    localStorage.setItem('searchInput', searchValue);
   };
 
   return (

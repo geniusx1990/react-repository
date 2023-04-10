@@ -6,8 +6,8 @@ import { API } from '../types/interfaces';
 
 function Home() {
   const [itemList, setItemList] = useState([]);
-  const searchValueStorage = localStorage.getItem('searchInputValue');
-  const [query, setQuery] = useState(searchValueStorage ?? '');
+  const searchStorage = localStorage.getItem('searchInput');
+  const [query, setQuery] = useState(searchStorage ?? '');
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -15,11 +15,20 @@ function Home() {
     setIsLoading(true);
 
     try {
-      const query = `${API.URL}${API.RANDOM}${API.ACCESS_KEY}`;
-      fetch(query)
+      let URL: string;
+      if (query === '') {
+        URL = `${API.URL}${API.RANDOM}${API.ACCESS_KEY}`;
+      } else {
+        URL = `${API.URL}${API.Search}${query}${API.ACCESS_KEY}`;
+      }
+      fetch(URL)
         .then((response) => response.json())
         .then((data) => {
-          setItemList(data);
+          if (query === '') {
+            setItemList(data);
+          } else {
+            setItemList(data.results);
+          }
         })
         .then(() => setIsLoading(false));
     } catch {
@@ -29,7 +38,7 @@ function Home() {
   return (
     <>
       <Header pageName="Home" />
-      <SearchBar />
+      <SearchBar setQuery={setQuery} />
       <CardList itemList={itemList} />
     </>
   );
