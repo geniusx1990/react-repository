@@ -1,8 +1,13 @@
 import { ICardItemProps } from '../types/interfaces';
 
-const CardItem = ({ card }: ICardItemProps) => {
+const CardItem = ({ card, setIsOpen, setCardActive }: ICardItemProps) => {
+  const handleClick = () => {
+    setIsOpen(true);
+    setCardActive(card.id);
+  };
+
   return (
-    <div className="product_item">
+    <div className="product_item" onClick={handleClick}>
       <h3 className="product_title">{card.description ?? 'Untitled'}</h3>
       <img className="product_image" src={card.urls.regular} alt={card.description} />
       <div className="card-description">

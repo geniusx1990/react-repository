@@ -40,6 +40,7 @@ export enum API {
   RANDOM = 'photos/random?count=10',
   ACCESS_KEY = '&client_id=Omdg7CBS3aZdED0fmGY840kQ-zoIAjZzk_kQDXOLdMU',
   Search = 'search/photos?query=',
+  ByID = 'photos/',
 }
 
 interface IUrls {
@@ -74,7 +75,13 @@ export interface ICardItem {
   updated_at: string;
   likes: number;
   user: IUser;
+  tags: ITags[];
   links: ILinks;
+}
+
+interface ITags {
+  type: string;
+  title: string;
 }
 
 export interface ICardList {
@@ -83,8 +90,15 @@ export interface ICardList {
 
 export interface ICardItemProps {
   card: ICardItem;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setCardActive: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface ISearchBar {
   setQuery: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface IModal {
+  cardActive: string;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
