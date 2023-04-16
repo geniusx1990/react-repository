@@ -3,6 +3,7 @@ import CardList from '../layout/CarldList';
 import Header from '../layout/header';
 import SearchBar from '../layout/searchBar';
 import { API } from '../types/interfaces';
+import Counter from '../store/Counter';
 
 function Home() {
   const [itemList, setItemList] = useState([]);
@@ -38,7 +39,7 @@ function Home() {
   return (
     <>
       <Header pageName="Home" />
-      <SearchBar setQuery={setQuery} />
+      <SearchBar />
       <CardList itemList={itemList} />
     </>
   );

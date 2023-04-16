@@ -1,20 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ISearchBar } from '../types/interfaces';
+import React, { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { setSearchRequest } from '../store/searchSlice';
 
-function SearchBar({ setQuery }: ISearchBar) {
-  const searchStorage = localStorage.getItem('searchInput');
-  const [searchValue, setSearchValue] = useState(searchStorage ?? '');
-  const search = useRef('');
-
-  useEffect(() => {
-    search.current = searchValue;
-  }, [searchValue]);
-
-  useEffect(() => {
-    return () => {
-      localStorage.setItem('searchInput', search.current);
-    };
-  }, []);
+function SearchBar() {
+  const searchRequest = useAppSelector((state) => state.searchReducer.searchRequest);
+  const dispatch = useAppDispatch();
+  const [searchValue, setSearchValue] = useState(searchRequest);
 
   const handleChangeInput = (event: React.FormEvent<HTMLInputElement>) => {
     setSearchValue(event.currentTarget.value);
@@ -22,9 +13,8 @@ function SearchBar({ setQuery }: ISearchBar) {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    dispatch(setSearchRequest(searchValue));
     console.log(searchValue);
-    setQuery(searchValue);
-    localStorage.setItem('searchInput', searchValue);
   };
 
   return (

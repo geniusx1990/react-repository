@@ -38,7 +38,7 @@ export interface IProductList {
 export enum API {
   URL = 'https://api.unsplash.com/',
   RANDOM = 'photos/random?count=10',
-  ACCESS_KEY = '&client_id=Omdg7CBS3aZdED0fmGY840kQ-zoIAjZzk_kQDXOLdMU',
+  ACCESS_KEY = '&client_id=lhEsO7r9Xbt-qPleFFpbPmrFvyoF2sIGVESl4vriSog',
   Search = 'search/photos?query=',
   ByID = 'photos/',
 }
