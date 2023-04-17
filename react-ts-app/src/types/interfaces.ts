@@ -84,9 +84,11 @@ interface ITags {
   title: string;
 }
 
-export interface ICardList {
-  itemList: ICardItem[];
+export interface ISearchResponse {
+  results: ICardList;
 }
+
+export type ICardList = ICardItem[];
 
 export interface ICardItemProps {
   card: ICardItem;
