@@ -4,8 +4,12 @@ import BrandsOptions from './BrandsOptions';
 import todayDate from './dateNow';
 import TypeOptions from './TypeOptions';
 import { useForm } from 'react-hook-form';
+import { useAppDispatch } from '../store/hooks';
+import { setProductList } from '../store/formSlice';
 
-function NameForm({ setProductList }: IProps) {
+function NameForm() {
+  const dispatch = useAppDispatch();
+
   const {
     register,
     formState: { errors },
@@ -17,9 +21,8 @@ function NameForm({ setProductList }: IProps) {
   const [submitAlert, setSubmitMessage] = useState(false);
 
   const onSubmit = handleSubmit((data) => {
-    setProductList((prev) => [
-      ...prev,
-      {
+    dispatch(
+      setProductList({
         id: cardId,
         title: data.title,
         brand: data.brand,
@@ -27,8 +30,8 @@ function NameForm({ setProductList }: IProps) {
         thumbnail: URL.createObjectURL(data.thumbnail[0]),
         discount: data.discount === 'withDiscount',
         category: data.category,
-      },
-    ]);
+      })
+    );
     reset();
     setSubmitMessage(true);
     setCardId((prev) => prev + 1);

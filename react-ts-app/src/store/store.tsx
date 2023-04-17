@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '../store/counterSlice';
 import searchReducer from './searchSlice';
-
+import formReducer from './formSlice';
 export const store = configureStore({
   reducer: {
     searchReducer,
+    formReducer,
     counter: counterReducer,
   },
 });
