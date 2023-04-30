@@ -2,7 +2,7 @@ import { describe, it } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import App from './App';
+import App from './app/App';
 
 describe('App', () => {
   it('navigation work correctly during work with menu links', () => {
